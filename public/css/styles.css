@@ -104,8 +104,8 @@ h2 span, h3 {
   font-family: "Titan One", sans-serif !important;
   font-weight: 400;
   font-style: normal;
-  color: #faea07;
-  text-shadow: 2px 2px 1px #757229;
+  color: #aa2a2a;
+  text-shadow: 2px 2px 1px #966767;
 }
 
 
@@ -118,10 +118,10 @@ h3 {
 }
 
 #services h3 {
-    color: #e9d00c;
+    color: #ffffff;
     text-shadow: -1px 0px 2px #000000;
     font-family: Arial Black;
-    background: #0c41db;
+    background: #aa2a2a;
     border-radius: 17px;
     padding: 5px 5px;
     font-size: 15px;
@@ -146,8 +146,14 @@ body {
   /* text-shadow: 1px 1px 9px #ffffff; */
 }
 
+h2 {
+    color: grey;
+}
+
+
+
 i {
-  color: #0029ff;
+  color: #aa2a2a;
 }
 
 /* a:hover {
@@ -490,8 +496,9 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
+  /* color: var(--bs-link-color); */
   text-decoration: underline;
+  color: #23bd34;
 }
 a:hover {
   color: var(--bs-link-hover-color);
@@ -4052,7 +4059,8 @@ textarea.form-control-lg {
 }
 
 .navbar-brand img {
-  border-radius: 33px;
+  border-radius: 5px;
+  max-width: 135px;
 }
 
 .navbar-nav {
@@ -8444,13 +8452,13 @@ textarea.form-control-lg {
 .bg-dark {
   --bs-bg-opacity: 1;
   /* background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important; */
-  background: #09204d;
+  background: #5c0707;
   /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(9,9,9,1) 45%, rgba(0,0,0,1) 100%); */
   color: #fff;
 }
 
 footer i {
-  color: yellow;
+  color: #00ff00;
 }
 
 .bg-black {
@@ -11188,11 +11196,12 @@ hr.divider-light {
 }
 
 #logo-footer {
-    border-radius: 33px;
+    border-radius: 5px;
+    width: 109px;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #0016ff !important;
+  color: #aa2a2a !important;
 }
 
 #picaje-bordado {
