@@ -48,10 +48,23 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const submitButton = document.getElementById("submitButton");
     submitButton?.addEventListener("click", (event) => {
-        console.log("clicked");
-
         const name = document.getElementById("name")?.value;
         const email = document.getElementById("email")?.value;
         const message = document.getElementById("message")?.value;
+
+        let _data = {
+            name,
+            email,
+            message,
+        };
+
+        fetch("https://tudiseno.vercel.app/tudisenho-send-email", {
+            method: "POST",
+            body: JSON.stringify(_data),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json))
+            .catch((err) => console.log(err));
     });
 });

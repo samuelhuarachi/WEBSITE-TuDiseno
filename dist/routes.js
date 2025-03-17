@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+const SendMail_1 = require("./use_case/SendMail");
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
@@ -19,46 +22,9 @@ router.get("/picaje-bordado", function (req, res) {
 });
 router.post("/tudisenho-send-email", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const { name, email, message } = req.body;
-            const host = req.get("host");
-            const transporter = nodemailer.createTransport({
-                host: "smtp.gmail.com",
-                port: 465,
-                secure: true,
-                auth: {
-                    user: process.env.SENDMAIL_EMAIL,
-                    pass: process.env.SENDMAIL_PASS,
-                },
-            });
-            const transporter2 = nodemailer.createTransport({
-                service: "gmail",
-                port: 465,
-                secure: true,
-                logger: true,
-                debug: true,
-                secureConnection: false,
-                auth: {
-                    user: process.env.SENDMAIL_EMAIL,
-                    pass: process.env.SENDMAIL_PASS,
-                },
-                tls: {
-                    rejectUnAuthorized: true,
-                },
-            });
-            const smtpTransport = nodemailer.createTransport(transporter2);
-            const mailOptions = {
-                to: email,
-                from: process.env.SENDMAIL_EMAIL,
-                subject: "Site Tu Diseno, contacto",
-                text: `${name}, ${message}`,
-            };
-            let info = yield smtpTransport.sendMail(mailOptions);
-            console.log("info", info);
-        }
-        catch (error) {
-            console.log(error);
-        }
+        const { name, email, message } = req.body;
+        const sendMail = new SendMail_1.SendMail();
+        yield sendMail.execute({ name, email, message });
         res.status(200).json({});
     });
 });
