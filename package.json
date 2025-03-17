@@ -78,6 +78,7 @@
     "express-session": "^1.17.3",
     "nodemailer": "^6.10.0",
     "validator": "^13.9.0",
-    "validator-brazil": "^1.2.2"
+    "validator-brazil": "^1.2.2",
+    "node-fetch": "^2.6.0"
   }
 }
