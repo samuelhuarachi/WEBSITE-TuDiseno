@@ -23,8 +23,8 @@ class SendMail {
                 recipients: [
                     {
                         address: {
-                            email,
-                            name,
+                            email: "samuel.huarachi@gmail.com",
+                            name: "Samuel Gomes",
                         },
                     },
                 ],
@@ -33,10 +33,11 @@ class SendMail {
                         name: "No Reply",
                         email: "no-reply@exclusivacam.com",
                     },
-                    subject: "ExclusivaCam Send - TuDiseno Contato site form",
-                    html: `<p>Contato teste ${message}</p>`,
+                    subject: `ExclusivaCam was sender - TuDiseno Contato site form ${new Date()}`,
+                    html: `<p>${name}, ${email}, ${message}</p>`,
                 },
             };
+            console.log(config);
             const request = yield fetch(URL, {
                 method: "POST",
                 headers: {
