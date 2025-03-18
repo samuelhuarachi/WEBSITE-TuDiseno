@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             message,
         };
 
-        fetch("https://tudiseno.vercel.app/tudisenho-send-email", {
+        fetch("/tudisenho-send-email", {
             method: "POST",
             body: JSON.stringify(_data),
             headers: { "Content-type": "application/json; charset=UTF-8" },
